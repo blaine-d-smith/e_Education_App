@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <h1 class='login-form-title text-white'>User Login</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col d-flex justify-content-center">
+                <div class="form-container-outer">
+                    <div class="form-container-inner">
+                        <form action="{% url 'login' %}" method="POST">
+                            {% csrf_token %}
+                            <input type="hidden" name="next" value="{{ next }}"/>
+                            <div class="form-group">
+                                <label class="sr-only" for="username">Username</label>
+                                <input type="text" name="username" placeholder="Enter your email" class="form-control"
+                                       required>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="sr-only" for="psw">Password</label>
+                                <input type="password" name="psw" placeholder="Enter your password" class="form-control"
+                                       required>
+                            </div>
+
+                            <input type="submit" value="Login" class="btn-lg btn-main login-btn btn-block">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

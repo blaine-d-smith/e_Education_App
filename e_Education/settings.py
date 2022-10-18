@@ -102,11 +102,11 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = 'static/'
-# STATIC_ROOT = BASE_DIR / 'static'
-# STATIC_DIR = BASE_DIR / 'e_Education/static'
-# STATICFILES_DIRS = [
-#     STATIC_DIR,
-# ]
+STATIC_ROOT = BASE_DIR / 'static'
+STATIC_DIR = BASE_DIR / 'e_Education/static'
+STATICFILES_DIRS = [
+    STATIC_DIR,
+]
 
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media'
